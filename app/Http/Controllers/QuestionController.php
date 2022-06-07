@@ -14,7 +14,7 @@ class QuestionController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            // 'image' => ['required', 'string', 'max:255'],
+            // 'image' => ['string'],
             'description' => ['required', 'string'],
             'tag' => ['required', 'string', 'max:255'],
             'Radios' => ['required'],
@@ -30,7 +30,7 @@ class QuestionController extends Controller
             'setting' => $request->Radios,
         ]);
         $topic->save();
-        return redirect('/');
+        return redirect('/question');
     }
     public function redirection()
     {
